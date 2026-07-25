@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Pertamaku - Pro</title>
+    <style>
+        /* ===========================
+           BASE STYLES (Tampilan Dasar)
+           =========================== */
+        body {
+            background-color: #0f172a;
+            font-family: 'JetBrains Mono', monospace;
+            color: #f8fafc;
+            /* Menggunakan min-height biar kartu gak kepotong di layar kecil */
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Tambah padding biar kartu gak nempel di pinggir layar HP */
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 400px;
+            width: 100%; /* Kartu akan melebar mengikuti layar, maksimal 400px */
+            transition: all 0.3s ease; /* Animasi halus saat ukuran berubah */
+        }
+
+        h1 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+            transition: font-size 0.3s ease; /* Animasi perubahan ukuran teks */
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 16px; /* Ukuran font standar yang nyaman */
+            line-height: 1.6;
+            margin-bottom: 20px;
+            transition: font-size 0.3s ease;
+        }
+
+        .btn {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 12px 24px; /* Sedikit lebih besar biar enak dipencet jari */
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px); /* Efek melayang sedikit saat mouse di atas */
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN (Khusus Layar HP)
+           ======================================== */
+        /* Aturan ini aktif kalau lebar layar di bawah 600px (HP standar) */
+        @media screen and (max-width: 600px) {
+            .card {
+                padding: 25px; /* Kurangi padding kartu di layar kecil */
+            }
+
+            h1 {
+                font-size: 24px; /* Judul jadi lebih kecil biar pas di layar HP */
+            }
+
+            p {
+                font-size: 14px; /* Teks isi jadi lebih kecil */
+            }
+
+            .btn {
+                width: 100%; /* Tombol jadi selebar kartu di HP */
+                padding: 15px; /* Tombol jadi lebih tinggi biar gampang dipencet */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Halo Dunia! 👋</h1>
+        <p>Website pertamaku kini interaktif dan mobile-friendly!</p>
+        <!-- Tambahkan ID pada tombol biar bisa dipanggil oleh JavaScript -->
+        <button class="btn" id="actionBtn">Klik Aku!</button>
+    </div>
+
+    <!-- ===========================
+         JAVASCRIPT INTERAKTIF
+         =========================== -->
+    <script>
+        // 1. Ambil elemen tombol berdasarkan ID yang kita buat tadi
+        const tombol = document.getElementById('actionBtn');
+
+        // 2. Tambahkan "pendengar" event klik ke tombol
+        tombol.addEventListener('click', function() {
+            // 3. Kode di dalam kurung kurawal ini akan dijalankan saat tombol diklik
+            alert("Hebat! Kamu berhasil menambahkan fitur JavaScript pertama kamu! 🚀");
+            
+            // (Opsional) Tambah sedikit perubahan visual pada tombol setelah diklik
+            tombol.innerText = "Sudah Diklik!";
+            tombol.style.backgroundColor = '#10b981'; // Ubah warna jadi hijau
+        });
+    </script>
+</body>
+</html>
